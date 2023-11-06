@@ -47,21 +47,43 @@ function flippingBits(n) {
 
     flipTheBinary = (arr) => {
         console.log("array coming in: " + arr)
+        flippedArray = []
+        
         arr.forEach(binaryNumber => {
-            // TODO This isn't actually flipping the number in the array...how to fix that? For loop that accesses the index postion and change and splice...?  PROBABLY SPLICE
             if (binaryNumber === 0) {
-                binaryNumber = 1;
+                flippedArray.push(1)
             } else {
-                binaryNumber = 0
+                flippedArray.push(0)
             }
         });
-        console.log("array after flipped: " + arr)
+        console.log("array after flipped: " + flippedArray)
+        binaryToDecimal(flippedArray);
+    }
+
+    binaryToDecimal = (arr) => {
+        let carryingNumber;
+        let decimalArray = [];
+        arr.forEach(changeToDecimal)
+        
+        function changeToDecimal(binaryNumber, index, arr) {
+            if (index === 0) {
+                carryingNumber = binaryNumber;
+                console.log("first number in array " + carryingNumber)
+            } if (index !== 0 && (index + 1) !== arr.length) {
+                // console.log(index);
+                carryingNumber = (carryingNumber * 2) + binaryNumber; 
+                console.log(carryingNumber)
+            } if (index !==0 && (index + 1) === arr.length) {
+                console.log(index);
+                carryingNumber = (carryingNumber * 2) + binaryNumber; 
+                console.log("final number " + carryingNumber)
+            }
+        }
+        
     }
 
     convertToBinary(n);
-    
-
 
 }
 
-flippingBits(13);
+flippingBits(9);
