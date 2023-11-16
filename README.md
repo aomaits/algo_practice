@@ -4,13 +4,13 @@ This repo is to publicize my algorithm practice and talk through my problem-solv
 ## Flipping Bits
 > You will be given a list of 32 bit unsigned integers. Flip all the bits (1 -> 0 and 0 -> 1) and return the result as an unsigned integer.
 
-### Problem Solving
+### Problem Solving 
 I started by breaking down the problem into three steps: 
 - convert the input to binary
 - flip every binary number to its opposite
 - convert my new binary number back to a decimal integer 
 
-### What I Learned
+### What I Learned 
 #### Binary Numbers
 I didn't know how to read binary numbers. That is, I knew a binary number could be either a 0 or a 1, but I didn't realize stringing them together would set a number equal to a digital integer based on their location. So that was new! 
 
@@ -56,4 +56,14 @@ I'm still learning about space and time complexity in programming, but I asked C
 
 It added that the space complexity of this function was relatively low as well. 
 
-I know I shouldn't rely on artificial intelligence to feel good about myself, but I'll take a moderately positive evaluation anywhere I can get one. My objective was a working solution and I acheived that- all the better that it wasn't terribly inefficient! 
+My objective was a working solution and I acheived that, but I know solving for efficiency is the next step in my development. 
+
+## Diagonal Difference
+> Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+
+### Problem Solving 
+I started out by setting up a forEach loop to determine how many rows (subarrays) each matrix (array) contained. I soon realized I did not need this separate loop and removed it. 
+
+When setting up my leftToRightDiagonal function, I initially tried to tally the index position of the row and the individual number. Then I realized that both index positions increase at the same rate will always be equal in a matrix. Thus, I simplified the code by using the single index position twice. 
+### What I Learned 
+### How to Improve This Code
