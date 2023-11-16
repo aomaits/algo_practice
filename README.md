@@ -62,8 +62,33 @@ My objective was a working solution and I acheived that, but I know solving for 
 > Given a square matrix, calculate the absolute difference between the sums of its diagonals.
 
 ### Problem Solving 
+
+#### Unnecessary Loop
 I started out by setting up a forEach loop to determine how many rows (subarrays) each matrix (array) contained. I soon realized I did not need this separate loop and removed it. 
 
+#### Summing Up the Left-to-Right Diagonal
 When setting up my leftToRightDiagonal function, I initially tried to tally the index position of the row and the individual number. Then I realized that both index positions increase at the same rate will always be equal in a matrix. Thus, I simplified the code by using the single index position twice. 
+
+#### Summing Up the Right-to-Left Diagonal
+This was not so simple on the rightToLeftDiagonal function. Whereas before the index of the subarray matched the index of the number within that subarray when moving on the left-to-right diagonal, the indices would have to start at the opposite poles in this function and cross. 
+
+For example, if we were given a matrix of 3 rows and 3 columns, we would need the index of the first subarray to be `[0]`. The value we need to access from that first row is on the far right, so it would have an index of `[2]`. While the subarray index climbs for the next few rows, the index of the value from within the subarray falls. They would overlap in the next row (the center of the matrix). Finally, the subarray's index would be up to `[2]` while the value's index would now be down to `[0]` for the final row.
+
+I scratched my head on this one a bit before setting up an inverse `for` loop to count backward through the subarrays. I then set up a separate variable to track the increasing index position within the subarray and added the value at these two indexes to the running total. 
+
+#### Finding the Difference
+
+Finding the difference was pretty simple. I initially started to construct a 3rd function, but soon realized that wasn't really necessary and just wrote it as two lines of code and a return. The first line finds the value of the difference between one value and the other. As this could be a negative result, I then added one more line of code to use the built-in `Math.abs` method to assign the absolute value of the difference to my final variable. Lastly, I returned the variable. 
+
 ### What I Learned 
+I got to use the `Math.abs` method for the first time in one of these algorithms. I wasn't surprised to find that JavaScript had it built in. 
+
+I also practiced using a reverse for loop, something I had seen once or twice but hadn't constructed myself. 
+
 ### How to Improve This Code
+
+#### Single Loop
+I wasn't sure how to get to the subarray value directly so I set up some variables to represent the subarrays. I also set up two distinct for loops for my solution. I found a simple solution to this problem that another user posted where they only used a single for loop. In this solution, they had a running total of the difference, finding the difference line-by-line and summing up that difference through the whole matrix. They were able to solve the problem with about 1/5th of lines of code that I wrote.   
+
+#### Big O Notation
+As far as time complexity, my solution was `0(n)` because the two functions are independent. Thus, the time complexities of their loops don't add up. The simple arithmetic at the end has a constant time complexity. 
