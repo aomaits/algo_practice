@@ -92,3 +92,16 @@ I wasn't sure how to get to the subarray value directly so I set up some variabl
 
 #### Big O Notation
 As far as time complexity, my solution was `0(n)` because the two functions are independent. Thus, the time complexities of their loops don't add up. The simple arithmetic at the end has a constant time complexity. 
+
+## Counting Sort 1
+>  Comparison Sorting
+
+> Quicksort usually has a running time of `n x log(n)`, but is there an algorithm that can sort even faster? In general, this is not possible. Most sorting algorithms are comparison sorts, i.e. they sort a list just by comparing the elements to one another. A comparison sort algorithm cannot beat `n x log(n)` (worst-case) running time, since `n x log(n)` represents the minimum number of comparisons needed to know where to place each element.
+
+> Alternative Sorting
+
+> Another sorting method, the counting sort, does not require comparison. Instead, you create an integer array whose index range covers the entire range of values in your array to sort. Each time a value occurs in the original array, you increment the counter at that index. At the end, run through your counting array, printing the value of each non-zero valued index that number of times.
+
+### Problem Solving 
+### What I Learned 
+### How to Improve This Code
