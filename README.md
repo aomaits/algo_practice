@@ -139,5 +139,11 @@ Mapping over the array would have been less wordy than using a `for` loop with t
 > Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
 
 ### Problem Solving 
+
+started out using split but wasn't working...i had set up the string as an array
+came up with the idea to create a separate array for the full hike so that we could compare back to the previous index position (only need to know when entering valley)
+introduced two if statements, one for U and one for D, added console logs to make sure everything behaved
+
+failed the second test the first time through, figured out that I missed an edge case (if hiker started by entering valley, there's no initial 0 from the array to count that descent)
 ### What I Learned 
 ### How to Improve This Code
