@@ -103,5 +103,13 @@ As far as time complexity, my solution was `0(n)` because the two functions are 
 > Another sorting method, the counting sort, does not require comparison. Instead, you create an integer array whose index range covers the entire range of values in your array to sort. Each time a value occurs in the original array, you increment the counter at that index. At the end, run through your counting array, printing the value of each non-zero valued index that number of times.
 
 ### Problem Solving 
+
+I had to re-read this problem a few times to understand what was expected here. When I started, I still misunderstood the solution, and created an array that had 100 index positions, and the number at each position was exactly equal to its index position. 
+Realizing I didn't need this array, I wrote a few new lines of JavaScript to create an array with 100 index positions that held only zeros. This is the starting version of the `resultArray`. I now had something to tally up the instances of each value from the input array. 
+The second step was to create a simple `for` loop with two steps in it: 
+- First, I used the built-in `at` array method to find the initial tally at a given index position and assign it to the variable `startingTally`
+- Second, I utilized `splice` to remove the startingTally value from the `resultArray` and replaced this value with itself + 1 at the same index position. 
+I was very excited that this worked on the first try! 
+ 
 ### What I Learned 
 ### How to Improve This Code

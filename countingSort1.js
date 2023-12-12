@@ -27,8 +27,10 @@ function countingSort(arr) {
     for (let i = 0; i < arr.length; i++) {
         const individualValue = arr[i];
         
-        // 
+        // Find the current tally at the index position of the resultArray
         let startingTally = resultArray.at(individualValue)
+
+        // Splice the old tally out of the resultArray and splice in the new tally + 1
         resultArray.splice(individualValue, 1, (startingTally + 1))
     }
 
