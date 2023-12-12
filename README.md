@@ -112,4 +112,20 @@ The second step was to create a simple `for` loop with two steps in it:
 I was very excited that this worked on the first try! 
  
 ### What I Learned 
+
+I hadn't used the `at` function recently, so I was able to get a quick refresher on that. 
+
+Most notably, though, was this new (to me) idea of how to solve a counting sort problem. I still don't fully understand the discussion on the run time of Comparison Sorting, but I found this alternative sorting method pretty interesting. It was also another reminder that there are usually multiple ways to solve a problem. 
+
 ### How to Improve This Code
+
+This was a pretty quick solution. It has a time complexity of O(n). 
+
+It would have been O(n + k) with `k` representing the possible values in the input array. However, we know that the range of values in the input array is a constant, therefore the time complexity simplifies to O(n). 
+
+#### fill()
+
+I saw an example submission using the `fill` method to build the initial array of zeros. I think that this is a great use of that array method and probably would do the same if I were to create it again. 
+
+#### map()
+Mapping over the array would have been less wordy than using a `for` loop with the `splice` and `at` methods indside of it. With `map`, I could have directly acted upon each element of the `resultArray` to increase its value by 1. 
