@@ -146,7 +146,17 @@ I had the idea that I only really needed to know when a hiker **entered** a vall
 I passed one of the two tests with this setup, but failed the second on the initial run. Going back to look at my code, I recognized the edge case I'd missed. While my code was correctly finding when a hiker came from above sea level and entered a valley, I hadn't accounted for the instance where the hiker enters a valley at the start of the hike. Since there would be now prior index position in the `fullHikeArray` to indicate that this hiker was starting above sea level and entering a valley, I was missing this initial descent. I add some `||` logic to acount for instances where the downhill began before the `fullHikeArray` held any values, and all tests then passed!
 
 ### What I Learned 
+I'm getting better at this! I got to the solution here faster than I have in previous algorithms.
 
+None of the methods I used were new. I think it helped having seen some previous solutions using blank arrays and tallys so I quickly landed on a possible means of solving this problem. 
 
 ### How to Improve This Code
-the logic here is really controlled as are the inputs. I'm getting it done w/ two if statements, but it feels like that could leave a lot of edge cases unaccounted for
+The logic here is really controlled and there were only two tests in the official solution, so I could certainly be missing some edge cases. I think in real world practicality there'd be thousands more edge cases to account for if you were to try and create the logic to tally the valleys entered on a hike! 
+
+I saw a good solution using a `For In` loop, which isn't something I have used before. We were given the steps, which I didn't utilize. This user had a much shorter solution by using that key in object structure. 
+
+I also saw an interesting solution using two loops and a couple while conditions. The first loop would count whenever a hiker entered a valley and the second loop would then tally until they left. I assumed that this second loop would increase the space/time complexity, but it looks like it's the same as what I acheived with only one loop. 
+
+#### Space / Time Complexity
+
+With a space and time complexity of `O(n)`, this code runs pretty efficiently. The time complexity is `O(n)` where `n` is the number of steps in the hike; the space complexity is `O(n)` as well because the `fullHikeArray`'s full length will only be as long as the number of steps in the hike.
