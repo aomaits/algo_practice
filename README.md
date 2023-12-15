@@ -139,11 +139,14 @@ Mapping over the array would have been less wordy than using a `for` loop with t
 > Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
 
 ### Problem Solving 
+I tried implementing the split method so that I could loop through each letter in the string, but I ran into trouble right away. It took me a moment, but I realized that, locally, I had set up the practice string as an array. After correcting that, I set up a `forEach` and got to work. 
 
-started out using split but wasn't working...i had set up the string as an array
-came up with the idea to create a separate array for the full hike so that we could compare back to the previous index position (only need to know when entering valley)
-introduced two if statements, one for U and one for D, added console logs to make sure everything behaved
+I had the idea that I only really needed to know when a hiker **entered** a valley. I created the `fullHikeArray` so that I could catalog the full hike, capturing where the hiker was in relation to sea level throughout by pushing in the `currentLocation` value after each element. Using this array, I then set up some `if` logic to account for whether the hiker was heading uphill or downhill. Uphills are added to the current relation to sealevel (`currentLocation`) while downhills are subtracted. 
 
-failed the second test the first time through, figured out that I missed an edge case (if hiker started by entering valley, there's no initial 0 from the array to count that descent)
+I passed one of the two tests with this setup, but failed the second on the initial run. Going back to look at my code, I recognized the edge case I'd missed. While my code was correctly finding when a hiker came from above sea level and entered a valley, I hadn't accounted for the instance where the hiker enters a valley at the start of the hike. Since there would be now prior index position in the `fullHikeArray` to indicate that this hiker was starting above sea level and entering a valley, I was missing this initial descent. I add some `||` logic to acount for instances where the downhill began before the `fullHikeArray` held any values, and all tests then passed!
+
 ### What I Learned 
+
+
 ### How to Improve This Code
+the logic here is really controlled as are the inputs. I'm getting it done w/ two if statements, but it feels like that could leave a lot of edge cases unaccounted for
