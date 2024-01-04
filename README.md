@@ -160,3 +160,7 @@ I also saw an interesting solution using two loops and a couple while conditions
 #### Space / Time Complexity
 
 With a space and time complexity of `O(n)`, this code runs pretty efficiently. The time complexity is `O(n)` where `n` is the number of steps in the hike; the space complexity is `O(n)` as well because the `fullHikeArray`'s full length will only be as long as the number of steps in the hike.
+
+## Pangrams
+
+started w/ regex but wasn't sure how to dynamically manipulate it
