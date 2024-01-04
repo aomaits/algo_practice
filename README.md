@@ -164,3 +164,13 @@ With a space and time complexity of `O(n)`, this code runs pretty efficiently. T
 ## Pangrams
 
 started w/ regex but wasn't sure how to dynamically manipulate it
+
+ultimately decided to manually create an alphabet array lowercase
+then change the input string to be lowercase
+used an embedded for loop to compare the arrays, removed a letter from the alphabet array once it had shown up in the original string
+if nothing left in the alphabet array once the original string had been looped over, it was a pangram!
+
+not the most efficient using a loop inside of a loop
+first ran into issues because my array wasn't set up correctly, I broke it into individual strings for each letter (I believe it also could have been one big string because JS will still loop over a string)
+Then I had troubles with an unscoped variable which VSCode didn't mind but HackerRank caught 
+Lastly I misspelled pangram in both outputs, so I failed all tests, though I quickly caught and corrected this mistake - the details matter! 
