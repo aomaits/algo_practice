@@ -162,8 +162,16 @@ I also saw an interesting solution using two loops and a couple while conditions
 With a space and time complexity of `O(n)`, this code runs pretty efficiently. The time complexity is `O(n)` where `n` is the number of steps in the hike; the space complexity is `O(n)` as well because the `fullHikeArray`'s full length will only be as long as the number of steps in the hike.
 
 ## Pangrams
+> A pangram is a string that contains every letter of the alphabet. Given a sentence determine whether it is a pangram in the English alphabet. Ignore case. Return either pangram or not pangram as appropriate.
 
-started w/ regex but wasn't sure how to dynamically manipulate it
+### Problem Solving 
+I started by creating a regex and attempting to use JavaScript's match function to compare the regex to the input string to make sure that the input string contained all letters in the regex. I created a regex for both uppercase and lowercase which made me realize that I could simply use the built-in `toLowerCase` function (or its inverse) and bypass the need for an `|` along with a second alphabet in the regex. 
+
+The regex I had was still clunky, and I wasn't too fond of trying to dynamically manipulating it. Maybe I could make part of the regex a variable that could change...I ultimately decided to ditch the regex idea because I wasn't sure how to implement it simply. 
+
+### What I Learned 
+### How to Improve This Code
+
 
 ultimately decided to manually create an alphabet array lowercase
 then change the input string to be lowercase
