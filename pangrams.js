@@ -10,13 +10,14 @@ function pangrams(s) {
         for (let index = 0; index < alphabetArray.length;) {
             const alphabetArrayElement = alphabetArray[index];
             if (stringElement === alphabetArrayElement) {
-                alphabetArray.splice(index, 1); // remove the 
+                alphabetArray.splice(index, 1); // remove the matching character from the alphabet array
             } if (stringElement !== alphabetArrayElement) {
-                index++
+                index++ // only increase the index position when no splicing has taken place - NEW ADDITION SINCE SUBMISSION
             }
         }
     }
 
+    // if the alphabet array has not been emptied, the string is not a pangram
     if (alphabetArray.length >= 1 ) {
         console.log("not pangram")
     } else {

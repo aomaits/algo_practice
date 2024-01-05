@@ -175,7 +175,18 @@ I tried to come up with a more efficient and elegant means of implementing my re
 
 I then ran into trouble using the `splice` method. I thought I would have to counteract the index position increase of the inner `for` loop once the `if` statement triggering the splice had run. I attempted to reduce the index position by 1 inside of that `if` statement before it increased again while continuing the `for` loop, but the inner for loop stalled and I could only get to the 0th index position of the alphabet. 
 
-I fixed this issue by removing that ``
+I fixed this issue by removing that index reduction logic completely. The program worked! I ran it in HackerRan and it failed. That was when I caught the spelling error I'd made in the word `"pangram"`. 
+
+Fixing that spelling error, my solution passed all test cases! Full success!!!
+
+...or so I thought. 
+
+#### Untested Edge Case!
+There are 8 test cases on the HackerRank problem and I suppose none of them put my `index++` loop issue to the test. However, my program, as originally written, **was** skipping an index position in the `alphabetArray`. That meant that if a word like `"About"` had been in one of the test cases, my program would have incorrectly skipped the letter `"b"` and failed to remove it. The `"a"` in the 0th position would be removed, leaving `"b"` in the 0th position. However, when comparing the `"b"` at the 1st index position of the `lowercaseVersion` array, the program would have already increased the index position of the inner loop. That means the `alphabetArray` loop would now be on to index 1, and would never see the match for the letter `b` down in the 0th position. 
+
+In short, my program did not account for a string requiring that two consecutive alphabeticals be removed from the `alphabetArray`. While this did not prevent me from submitting the "correct" response on HackerRank, I realized the issue while typing up this recap. 
+
+I suspected a better fix would be simply to move the `index++` for the inner loop to the second conditional statement. This worked, keeping the index position of the inner loop steady when a splice is made and increasing it when there was no match! 
 
 ### What I Learned 
 ### How to Improve This Code
