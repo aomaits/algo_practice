@@ -169,6 +169,14 @@ I started by creating a regex and attempting to use JavaScript's match function 
 
 The regex I had was still clunky, and I wasn't too fond of trying to dynamically manipulating it. Maybe I could make part of the regex a variable that could change...I ultimately decided to ditch the regex idea because I wasn't sure how to implement it simply. 
 
+What I instead decided to do was to take that regex of lowercase letters and make it an array, `alphabetArray`. My idea was to pull out the used letters from this alphabetic array while looping through the given string. If `alphabetArray` had letters leftover, the program would return `"not pangram`. But if it was empty, the program would correctly return `pangram`. My first attempt at creating this array didn't run correctly, so I updated the `alphabetArray` to be an array of individual characters.
+
+I tried to come up with a more efficient and elegant means of implementing my removal approach, but what came to mind ultimately was to stack a `for` loop inside of another `for` loop. The first loop starts with the first letter in the lowercase version of the given string, `lowercaseVersion` and then the inner loop checks that letter against the `alphabetArray`, removing the matching letter from `alphabetArray` if it exists there. 
+
+I then ran into trouble using the `splice` method. I thought I would have to counteract the index position increase of the inner `for` loop once the `if` statement triggering the splice had run. I attempted to reduce the index position by 1 inside of that `if` statement before it increased again while continuing the `for` loop, but the inner for loop stalled and I could only get to the 0th index position of the alphabet. 
+
+I fixed this issue by removing that ``
+
 ### What I Learned 
 ### How to Improve This Code
 
