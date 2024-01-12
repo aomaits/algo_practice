@@ -189,15 +189,9 @@ In short, my program did not account for a string requiring that two consecutive
 I suspected a better fix would be simply to move the `index++` for the inner loop to the second conditional statement. This worked, keeping the index position of the inner loop steady when a splice is made and increasing it when there was no match! 
 
 ### What I Learned 
+This solution is a representation of the possible downside I've heard spoken about when engineers "write to the test". My given solution passed all tests, but clearly the given tests did not provide for all edge cases. This was my first experience writing code that tested well but could have shown a glitch once pushed to production. 
+
+Of course, this is not to critique Test Driven Development or any approach where testing is emphasized- if anything, the testing here is not robust enough! What I learned is that just passing the tests is not everyting, an engineer/developer should always be accounting for as many edge cases as possible. 
+
 ### How to Improve This Code
-
-
-ultimately decided to manually create an alphabet array lowercase
-then change the input string to be lowercase
-used an embedded for loop to compare the arrays, removed a letter from the alphabet array once it had shown up in the original string
-if nothing left in the alphabet array once the original string had been looped over, it was a pangram!
-
-not the most efficient using a loop inside of a loop
-first ran into issues because my array wasn't set up correctly, I broke it into individual strings for each letter (I believe it also could have been one big string because JS will still loop over a string)
-Then I had troubles with an unscoped variable which VSCode didn't mind but HackerRank caught 
-Lastly I misspelled pangram in both outputs, so I failed all tests, though I quickly caught and corrected this mistake - the details matter! 
+Aside from the improvements I made by fixing for an edge case, the most obvious improvement to the code that I saw would be to reduce the time complexity. This could be achieved by simply reducing from two `for` loops to simply a single loop. Many of the solutions I saw took a similar tact to mine, but there was a TypeScript solution using the `includes` array method to loop through only the alphabet array. By comparing the looping alphabet array to see if each letter is included in the given string, this user was able to reduce the time complexity to O(n). The time complexity on my loop-inside-of-a-loop solution, by contrast, was O(n^2). 
