@@ -195,3 +195,4 @@ Of course, this is not to critique Test Driven Development or any approach where
 
 ### How to Improve This Code
 Aside from the improvements I made by fixing for an edge case, the most obvious improvement to the code that I saw would be to reduce the time complexity. This could be achieved by simply reducing from two `for` loops to simply a single loop. Many of the solutions I saw took a similar tact to mine, but there was a TypeScript solution using the `includes` array method to loop through only the alphabet array. By comparing the looping alphabet array to see if each letter is included in the given string, this user was able to reduce the time complexity to O(n). The time complexity on my loop-inside-of-a-loop solution, by contrast, was O(n^2). 
+
