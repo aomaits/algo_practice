@@ -21,14 +21,6 @@ function marsExploration(s) {
   }
 
   console.log(messageTally);
-  // make string into an array of strings w/ 3 letters each
-  // check each array object for correctness foreach
-  // tally incorrect letters with if ! statements
-
-
-  // set up a while loop for while the s has letters
-  // if SOS, shift? the SOS out
-  // if it doesn't match, add a tally for each letter that doesn't match...
 }
 
 // Expect 3 changed letters as result

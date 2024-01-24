@@ -196,3 +196,34 @@ Of course, this is not to critique Test Driven Development or any approach where
 ### How to Improve This Code
 Aside from the improvements I made by fixing for an edge case, the most obvious improvement to the code that I saw would be to reduce the time complexity. This could be achieved by simply reducing from two `for` loops to simply a single loop. Many of the solutions I saw took a similar tact to mine, but there was a TypeScript solution using the `includes` array method to loop through only the alphabet array. By comparing the looping alphabet array to see if each letter is included in the given string, this user was able to reduce the time complexity to O(n). The time complexity on my loop-inside-of-a-loop solution, by contrast, was O(n^2). 
 
+## Mars Exploration
+> A space explorer's ship crashed on Mars! They send a series of SOS messages to Earth for help.
+
+> Letters in some of the SOS messages are altered by cosmic radiation during transmission. Given the signal received by Earth as a string, `s`, determine how many letters of the SOS message have been changed by radiation.
+
+### Problem Solving 
+
+I pseudocoded two ideas before finally settling on my third idea. 
+
+#### An Array of Strings? 
+My first idea was to break down the long SOS message into an array of strings, each with its own SOS message. For example, the message `SOSSOS` would be broken down to an array, something like this: `sosArray = ["SOS", "SOS"]`. From there, I figured I would check each string within the larger array to see if it equaled SOS. That's where I decided to switch tactics- I wasn't sure how having the smaller SOS strings was actually going to help me. My best ideas were to set up multiple if statements or to loop through each string. I wasn't conviced this was the best approach after all, so I scrapped it. 
+
+#### Shift Out Each SOS?
+My second idea was to use JavaScript's built-in `shift()` method to remove each SOS from the beginning of the string. Once it was pulled it out I would compare it to the string `"SOS"`. If it matched, I would get rid of it. If it didn't match, I would tally up the incorrect letters.
+
+I basically ran into the same issue with this approach as I had with the first. I didn't think separating out the individual SOS messages would help me that much, since I'd still have to compare each of them letter-by-letter to see how many incorrect letters I needed to tally. 
+
+#### Create a Correct String for Comparison
+
+Dropping the idea of breaking down the string into smaller SOS messages, I wondered if I could create a correct string of the same length that I could compare letter-by-letter to the input string...
+
+I first set up my `numberOfMessages` variable to count the number of SOS messages from the input string by taking `s.length` and dividing that by 3. I console logged this to make sure my various data types were interacting as expected. So far so good. 
+
+I hit a snag trying to multiply the string `"SOS"` by 3. Even JavaScript didn't like mujltiply a string by a number. A quick search on StackOverflow put me on to the `repeat()` method. I hadn't used that before. It worked like a charm- I made a new string, `correctMessage`, equal to `"SOS"` repeated `numberOfMessages` times.
+
+
+
+
+### What I Learned 
+
+### How to Improve This Code
