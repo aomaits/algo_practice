@@ -221,9 +221,11 @@ I first set up my `numberOfMessages` variable to count the number of SOS message
 
 I hit a snag trying to multiply the string `"SOS"` by 3. Even JavaScript didn't want to try and multiply a string by a number. A quick search on StackOverflow put me on to the `repeat()` method. I hadn't used that before. It worked like a charm- I made a new string, `correctMessage`, equal to `"SOS"` repeated `numberOfMessages` times. 
 
-
-
+I had initially hoped to use a `forEach` loop for extra practice with that method  while looping through these two strings. Realizing I would need to access the index value, I quickly reverted to a standard `for` loop. I set up the `for` loop to compare the letter of the input string (`s`) to the letter of the corrected string (`correctMessage`) at the same index position. Since we were looping through both strings simultaneously, I was confident this would have a low time complexity. I also initially included an else clause to double-check that everything was behaving as expected. I ran the function against three samples and it correctly tallied each one! 
 
 ### What I Learned 
+This was my quickest solve yet, despite initial changes to my approach.
+
+I got to utilize the `repeat` method 
 
 ### How to Improve This Code
