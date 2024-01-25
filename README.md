@@ -219,7 +219,7 @@ Dropping the idea of breaking down the string into smaller SOS messages, I wonde
 
 I first set up my `numberOfMessages` variable to count the number of SOS messages from the input string by taking `s.length` and dividing that by 3. I console logged this to make sure my various data types were interacting as expected. So far so good. 
 
-I hit a snag trying to multiply the string `"SOS"` by 3. Even JavaScript didn't like mujltiply a string by a number. A quick search on StackOverflow put me on to the `repeat()` method. I hadn't used that before. It worked like a charm- I made a new string, `correctMessage`, equal to `"SOS"` repeated `numberOfMessages` times.
+I hit a snag trying to multiply the string `"SOS"` by 3. Even JavaScript didn't want to try and multiply a string by a number. A quick search on StackOverflow put me on to the `repeat()` method. I hadn't used that before. It worked like a charm- I made a new string, `correctMessage`, equal to `"SOS"` repeated `numberOfMessages` times. 
 
 
 
