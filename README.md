@@ -223,9 +223,16 @@ I hit a snag trying to multiply the string `"SOS"` by 3. Even JavaScript didn't 
 
 I had initially hoped to use a `forEach` loop for extra practice with that method  while looping through these two strings. Realizing I would need to access the index value, I quickly reverted to a standard `for` loop. I set up the `for` loop to compare the letter of the input string (`s`) to the letter of the corrected string (`correctMessage`) at the same index position. Since we were looping through both strings simultaneously, I was confident this would have a low time complexity. I also initially included an else clause to double-check that everything was behaving as expected. I ran the function against three samples and it correctly tallied each one! 
 
-### What I Learned 
-This was my quickest solve yet, despite initial changes to my approach.
+### My Progress
 
-I got to utilize the `repeat` method 
+This was my quickest solve yet, despite several starting rounds of pseudocoding. I did a good job of avoiding wasted time on those initial solutions whose implementation I couldn't fully visualize. I also used my resources well- turning to StackOverflow for the multiplication issue yielded immediate results. In earlier solutions, I don't know if I would have had the conviction that this approach could work and might have redirected instead. 
+
+### What I Learned 
+
+I think the most important learning here was noted above- discovering and putting into practice JavaScript's `repeat` method. I think this problem was mostly a reinforcing of problem-solving principles and concepts and provided practice at solving algorithms more quickly. 
 
 ### How to Improve This Code
+
+I found a solution in the discussions on HackerRank that resembled what I was trying to do with my first approach. This solution was simpler than creating an array of strings. Instead, it used a `for` loop that incremented by 3 instead of just moving forward by 1. Then it used three `if` statements to compare to the `S`, the `O`, and the `S` and increase the tally where there wasn't strict equality. 
+
+I'm still using ChatGPT to help me analyze the Big O notation for these solutions. I suspected that this solution would have a relatively low time demand. I believe the overall time complexity for this program is `O(n)`. 
