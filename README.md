@@ -247,6 +247,9 @@ I'm still using ChatGPT to help me analyze the Big O notation for these solution
 failed as a mock test- ran 30 minutes without a solution
 had an idea - tally each subquadrant, if topLeft isn't biggest, proceed to make a flip then check again. Wasted time trying to slice out the subarrays before getting the syntax for accessing values within the subarrays correctly. Also wasted some time trying to figure out how to scale the program before settling on solving the test case first.
 
+This was a mess. I thought I could just move through the columns, checking to see if one needed flipped based on whether or not it was bottom heavy, but that's actually not the optimal answer because you may be better off changing another row or column first. 
+
+So then I wrote a set of really complicated if statements that checked if a column should be flipped based on not only if it was bottom heavy but making sure doing so wouldn't mess up a row flip instead. I thought I had a pretty elegant solution where, for example, two numbers are greater than the two above them and greater than the sums of either those two numbers plus the number next to them- but the conditionals weren't performing how I thought they should based on the math. Plus, this only solved for a matrix of this size, I wasn't sure how to make it dynamic. 
 
 ####  
 
