@@ -255,16 +255,21 @@ I then wrote a set of really complicated if statements that checked if a column 
 I figured I was missing a mathematical formula for dealing with matrices, so I turned to ChatGPT. I learned from the response that the problem wasn't a missing mathematical formula. My problem was that I was working toward the solution of the game as presented in the problem. Following the example, I was trying to figure out how to get my program to flip column 2 and then flip row 0. While this is how players of the game would solve the matrix puzzle, the actual answer output is the maximal sum of the upper left quadrant. 
 
 ####  The Solution
-ChatGPT gave me a solution and I still didn't understand it. It seemed too short. I adjusted some of the variable names so that they were more declarative. I asked for a breakdown of the `Math.max` function's use and I added lots of console logs so that I could follow what was happening. I believe I'd made the right call to ask for help- I had been really far off base with my problem solving. 
+ChatGPT gave me a solution and I still didn't understand it. It seemed too short. I adjusted some of the variable names so that they were more descriptive. I asked for a breakdown of the `Math.max` function's use and I added lots of console logs so that I could follow what was happening. I believe I'd made the right call to ask for help- I had been really far off base with my problem solving. 
 
 The way that the given solution works is that it doesn't bother with actually creating any matrix or flipping columns or rows. It solves the problem by figuring out what the maximum value could be at each of the locations in the top left quadrant. For example, if we start at row 0, column 0, the program will compare that top left corner number with the bottom left corner, the top right corner, and the bottom right corner. Wherever the highest number is located doesn't really matter, but this `maxSum` value will be added to the `maxValue` variable. (In our example, the highest corner value is at `matrix[0][3]`, the top right: 119.) This finds the highest possible value for the top leftmost number, regardless whether that value has to get there from flipping a row or a column. 
 
 The program will run as many more times as it needs to, given the size of the matrix. For the example solution, it runs through four times, twice in the inner loop and twice in the outer. In the inner loop, the program moves through the columns of a row of the matrix; in the outer loop, the program moves onto the next row in the matrix.
 
 ### My Progress
-An unsolved solution doesn't feel like progress. 
+An unsolved solution doesn't feel like progress, and it's disappointing that I was so far off with my approach. As I looked through the discussion on HackerRank, though, I saw that many others had taken a similar route. I saw a few folks who used logic more similar to what I had, taking the time to build out the matrix or asking about how to flip the columns or rows. 
+
+If I can say there's progress, it's in knowing when to ask for help (in my case, AI) and it what I learned after the fact.
 
 ### What I Learned 
+I should have taken more time to try and read the solution and really figure out what was being requested. I also learned about the `Math.max` function- this was my first time seeing that. I learned about a simpler way to approach this problem or problems similar in the future.
 
 ### How to Improve This Code
+I made few adjustments to improve the code. I added a few descriptive variables and a couple comments. Otherwise, I have no feedback for the code solution here. 
 
+The time complexity is O(n^2) where `n` is size of one side of the square matrix. 
