@@ -236,3 +236,28 @@ I think the most important learning here was noted above- discovering and puttin
 I found a solution in the discussions on HackerRank that resembled what I was trying to do with my first approach. This solution was simpler than creating an array of strings. Instead, it used a `for` loop that incremented by 3 instead of just moving forward by 1. Then it used three `if` statements to compare to the `S`, the `O`, and the `S` and increase the tally where there wasn't strict equality. 
 
 I'm still using ChatGPT to help me analyze the Big O notation for these solutions. I suspected that this solution would have a relatively low time demand. I believe the overall time complexity for this program is `O(n)`. 
+
+## Flipping the Matrix
+> Sean invented a game involving a  matrix where each cell of the matrix contains an integer. He can reverse any of its rows or columns any number of times. The goal of the game is to maximize the sum of the elements in the  submatrix located in the upper-left quadrant of the matrix.
+
+> Given the initial configurations for  matrices, help Sean reverse the rows and columns of each matrix in the best possible way so that the sum of the elements in the matrix's upper-left quadrant is maximal.
+
+### Problem Solving 
+
+failed as a mock test- ran 30 minutes without a solution
+had an idea - tally each subquadrant, if topLeft isn't biggest, proceed to make a flip then check again. Wasted time trying to slice out the subarrays before getting the syntax for accessing values within the subarrays correctly. Also wasted some time trying to figure out how to scale the program before settling on solving the test case first.
+
+
+####  
+
+#### 
+
+####
+
+### My Progress
+
+
+### What I Learned 
+
+### How to Improve This Code
+
