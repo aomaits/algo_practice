@@ -237,21 +237,25 @@ I found a solution in the discussions on HackerRank that resembled what I was tr
 
 I'm still using ChatGPT to help me analyze the Big O notation for these solutions. I suspected that this solution would have a relatively low time demand. I believe the overall time complexity for this program is `O(n)`. 
 
-## Flipping the Matrix
+## Flipping the Matrix - Test
 > Sean invented a game involving a  matrix where each cell of the matrix contains an integer. He can reverse any of its rows or columns any number of times. The goal of the game is to maximize the sum of the elements in the  submatrix located in the upper-left quadrant of the matrix.
 
 > Given the initial configurations for  matrices, help Sean reverse the rows and columns of each matrix in the best possible way so that the sum of the elements in the matrix's upper-left quadrant is maximal.
 
 ### Problem Solving 
+I was unable to solve this problem in the 30 minutes allotted for the test. I found the problem and worked on it more afterward, but couldn't get a valid solution submitted.
 
-failed as a mock test- ran 30 minutes without a solution
-had an idea - tally each subquadrant, if topLeft isn't biggest, proceed to make a flip then check again. Wasted time trying to slice out the subarrays before getting the syntax for accessing values within the subarrays correctly. Also wasted some time trying to figure out how to scale the program before settling on solving the test case first.
+#### Learning from Failure
+During the test I had a few ideas. I thought I could tally each subquadrant of the matrix, checking to make sure that the top left quadrant was the largest. If it wasn't, I figured I could proceed to flip a column where the top values were lower than the bottom values. I wasted some time trying to splice out the subarrays before figuring out the correct syntax for accessing the subarrays. I also spent time trying to figure out how to scale it before settling on solving the test case first. I soon ran out of time.
 
-This was a mess. I thought I could just move through the columns, checking to see if one needed flipped based on whether or not it was bottom heavy, but that's actually not the optimal answer because you may be better off changing another row or column first. 
+Even after the test was over, my code was a mess. I thought I could just move through the columns, checking to see if one needed flipped based on whether or not it was bottom heavy, but that's actually not the optimal answer because you may be better off changing another row or column first.  
 
-So then I wrote a set of really complicated if statements that checked if a column should be flipped based on not only if it was bottom heavy but making sure doing so wouldn't mess up a row flip instead. I thought I had a pretty elegant solution where, for example, two numbers are greater than the two above them and greater than the sums of either those two numbers plus the number next to them- but the conditionals weren't performing how I thought they should based on the math. Plus, this only solved for a matrix of this size, I wasn't sure how to make it dynamic. 
+I then wrote a set of really complicated if statements that checked if a column should be flipped based on not only if it was bottom heavy but making sure doing so wouldn't mess up a row flip instead. I thought I had a pretty elegant solution where, for example, two numbers are greater than the two above them and greater than the sums of either those two numbers plus the number next to them- but the conditionals got really cumbersome and weren't performing how I thought they should. Plus, this only solved for a matrix of this size- even if it worked I wasn't sure how I would make it dynamic. 
 
-####  
+I figured I was missing a mathematical formula for dealing with matrices, so I turned to ChatGPT. I learned from the response that the problem wasn't a missing mathematical formula. My problem was that I was working toward the solution of the game as presented in the problem. Following the example, I was trying to figure out how to get my program to flip column 2 and then flip row 0. While this is how players of the game would solve the matrix puzzle, the actual answer output is the maximal sum of the upper left quadrant. 
+
+####  The Solution
+ChatGPT gave me a solution and I still didn't understand it. It seemed too simple. I asked for a breakdown of the `Math.max` function's use and I added lots of console logs so that I could follow what was happening. 
 
 #### 
 
