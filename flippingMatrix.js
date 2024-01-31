@@ -20,7 +20,7 @@ function flippingMatrix(matrix) {
       // console.log(maxSum);
     }    
   }
-  // console.log(maxSum);
+  console.log(maxSum);
 }
 
 flippingMatrix(matrix1); //expect output of "414"

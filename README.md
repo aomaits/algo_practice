@@ -238,9 +238,9 @@ I found a solution in the discussions on HackerRank that resembled what I was tr
 I'm still using ChatGPT to help me analyze the Big O notation for these solutions. I suspected that this solution would have a relatively low time demand. I believe the overall time complexity for this program is `O(n)`. 
 
 ## Flipping the Matrix - Test
-> Sean invented a game involving a  matrix where each cell of the matrix contains an integer. He can reverse any of its rows or columns any number of times. The goal of the game is to maximize the sum of the elements in the  submatrix located in the upper-left quadrant of the matrix.
+> Sean invented a game involving a `2n x 2n` matrix where each cell of the matrix contains an integer. He can reverse any of its rows or columns any number of times. The goal of the game is to maximize the sum of the elements in the `n x n` submatrix located in the upper-left quadrant of the matrix.
 
-> Given the initial configurations for  matrices, help Sean reverse the rows and columns of each matrix in the best possible way so that the sum of the elements in the matrix's upper-left quadrant is maximal.
+> Given the initial configurations for `q` matrices, help Sean reverse the rows and columns of each matrix in the best possible way so that the sum of the elements in the matrix's upper-left quadrant is maximal.
 
 ### Problem Solving 
 I was unable to solve this problem in the 30 minutes allotted for the test. I found the problem and worked on it more afterward, but couldn't get a valid solution submitted.
@@ -255,14 +255,14 @@ I then wrote a set of really complicated if statements that checked if a column 
 I figured I was missing a mathematical formula for dealing with matrices, so I turned to ChatGPT. I learned from the response that the problem wasn't a missing mathematical formula. My problem was that I was working toward the solution of the game as presented in the problem. Following the example, I was trying to figure out how to get my program to flip column 2 and then flip row 0. While this is how players of the game would solve the matrix puzzle, the actual answer output is the maximal sum of the upper left quadrant. 
 
 ####  The Solution
-ChatGPT gave me a solution and I still didn't understand it. It seemed too simple. I asked for a breakdown of the `Math.max` function's use and I added lots of console logs so that I could follow what was happening. 
+ChatGPT gave me a solution and I still didn't understand it. It seemed too short. I adjusted some of the variable names so that they were more declarative. I asked for a breakdown of the `Math.max` function's use and I added lots of console logs so that I could follow what was happening. I believe I'd made the right call to ask for help- I had been really far off base with my problem solving. 
 
-#### 
+The way that the given solution works is that it doesn't bother with actually creating any matrix or flipping columns or rows. It solves the problem by figuring out what the maximum value could be at each of the locations in the top left quadrant. For example, if we start at row 0, column 0, the program will compare that top left corner number with the bottom left corner, the top right corner, and the bottom right corner. Wherever the highest number is located doesn't really matter, but this `maxSum` value will be added to the `maxValue` variable. (In our example, the highest corner value is at `matrix[0][3]`, the top right: 119.) This finds the highest possible value for the top leftmost number, regardless whether that value has to get there from flipping a row or a column. 
 
-####
+The program will run as many more times as it needs to, given the size of the matrix. For the example solution, it runs through four times, twice in the inner loop and twice in the outer. In the inner loop, the program moves through the columns of a row of the matrix; in the outer loop, the program moves onto the next row in the matrix.
 
 ### My Progress
-
+An unsolved solution doesn't feel like progress. 
 
 ### What I Learned 
 
