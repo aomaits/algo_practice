@@ -1,44 +1,43 @@
 function twoArrays(k, A, B) {
-  let initialArray = A;
-  // console.log(initialArray);
+  // let initialArray = A;
+  // let arraysArePermutable = true;
+  let arrayNeedsShuffled = false;
+  let j = 1;
 
-  const compareArrays = (array1, array2) => {
-    let i = 0;
-    while (i < A.length) {
-      if (A[i] + B[i] >= k) {
-        console.log("A[i] is: ", A[i], ", + B[i] (", B[i], ") is: ", (A[i] + B[i]), " which is greater than ", k)
-        i++;
-      } if (A[i] + B[i] < k) {
-        console.log("A[i] is: ", A[i], ", + B[i] (", B[i], ") is: ", (A[i] + B[i]), " which is less than ", k);
-        i++;
+  const compareArrays = (givenInteger, array1, array2) => {
+    for (let i = 0; i < array1.length; i++) {
+      if (array1[i] + array2[i] >= givenInteger) {
+        console.log("Works at index of ", i);
+      } if (array1[i] + array2[i] < givenInteger) {
+        console.log("Does not work at index of ", i, ", arrays need to be shuffled")
+        arrayNeedsShuffled = true;
+        return;
       }
     }
-    console.log("time to shuffle")
-    shuffleArray(A)
   }
-  
-  const shuffleArray = (firstArray) => {
-    console.log("now shuffling...")
-    let firstElement = firstArray.shift();
-    firstArray.push(firstElement);
-    console.log(firstArray)
-    if (initialArray === firstArray) {
-      console.log("whole array shuffled")
-      //actually want to call a method to move to the second index position
+  compareArrays(k, A, B);
+
+  if (arrayNeedsShuffled) {
+    //arrayshuffler function
+    if (A[j] < A.length) {
+      let swappedElement = A.shift();
+      // console.log(swappedElement);
+      // console.log(A);
+      A.splice(j, 0, swappedElement)
+      // console.log(A);
     }
+    arrayNeedsShuffled = false;
+    j++;
+    console.log(j)
   }
-  
-  compareArrays(A, B);
-  // while arraysArePermutedCorrectly === false
-  // 
 
-    // loop through the first array
-    // see if A[i] + B[i] >= k
-    // if yes, continue, if no, check to see if all of array has been compared i
-
-  //TODO Have to be able to permute BOTH arrays!
-  // How to ensure that both arrays are in the correct order? 
-  
+  /*
+  Compare the two arrays, end the program if all indices are >= k when added
+  if not, shuffle first array - 
+    i & i+1   as long as i+1 < 1stArray.length
+  run the comparison function again, if not, run the shuffle function again
+  If arrays don't make mix && i === 1stArray.length, shuffle the second array, then run the comparison again
+  */
 };
 
 twoArrays(1, [0, 1], [0, 2]);
