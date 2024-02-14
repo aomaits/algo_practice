@@ -2,12 +2,13 @@ function twoArrays(k, A, B) {
   /*
   subtract the values of the second array from k to create a difference array (usually negative values)
   subtract the first array from the difference array to get the balance array
-  add together all balance array values, if >= 0, return YES
+  add together all balance array values, if <= 0, return YES
   */
 
   let diffArray = [];
   let balanceArray =[];
   let balanceSum = 0;
+  let finalOutput = '';
 
   // console.log(B);
 
@@ -18,21 +19,32 @@ function twoArrays(k, A, B) {
     diffArray.push(element - k);
     // console.log(diffArray);
   });
+    console.log(diffArray)
+
 
   for (let i = 0; i < A.length; i++) {
     // console.log(balanceArray);
     // console.log(diffArray[i]);
     // console.log("minus");
     // console.log(B[i]);
-    balanceArray.push(diffArray[i] - A[i]);  
+    balanceArray.push(diffArray[i] + A[i]);  
   }
-  
-  for (let i=0; i <balanceArray.length; i++) {
-    // balanceSum = 
-    // TODO add together all the values in the balanceArray
-  }
-  console.log(balanceArray)  
+  console.log(balanceArray) 
 
+  for (let i=0; i <balanceArray.length; i++) {
+    balanceSum += balanceArray[i]
+  }
+  console.log(balanceSum)  
+
+  if (balanceSum < 0) {
+    // console.log("won't work?")
+    finalOutput = "NO"
+  } else {
+    // console.log("will work?")
+    finalOutput = "YES"
+  }
+
+  return finalOutput;
   // console.log(diffArray);
 
   // let initialArray = A;
@@ -101,4 +113,6 @@ function twoArrays(k, A, B) {
   */
 };
 
+twoArrays(5, [1, 2, 2, 1], [3, 3, 3, 4]);
+twoArrays(10, [2, 1, 3], [7, 8, 9]);
 twoArrays(1, [0, 1], [0, 2]);
