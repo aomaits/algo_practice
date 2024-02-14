@@ -273,3 +273,34 @@ I should have taken more time to try and read the solution and really figure out
 I made few adjustments to improve the code. I added a few descriptive variables and a couple comments. Otherwise, I have no feedback for the code solution here. 
 
 The time complexity is O(n^2) where `n` is size of one side of the square matrix. 
+
+## Permuting Two Arrays
+> 
+
+> 
+
+### Problem Solving 
+
+Tried looping inside of a loop to compare the two arrays and see if each number in the first array could be added to a number in the second array to achieve `k` but realized that could fail
+
+Then thought I could shuffle the first array by pushing and shifting a number each time while comparing the two arrays, but the arrays can be permuted in any order so this wouldn't capture all combinations of an array
+
+Long version with function to handle the shuffling and other function to check for the values, shuffle function growing complex with how to see the various iterations of the arrays
+
+read a possible unintended hint in the explanation about the first array would have to have at least 3 values in an array over 1 to work
+
+mostly worked! but one edge case did not, dug in and figured out why (a high number in one location would convince my balance that it was more than 0, even though that didn't mean it would work.) [1,2,2,1 ] and [3,3,3,4] work, but if changing that last 4 to a 5, my program thinks this would work- it still won't. 
+
+I tried to ask ChatGPT for help getting the last step involved in my addition, ChatGPT instead gave me the answer to the problem. 
+#### 
+
+####  
+
+
+### My Progress
+
+
+### What I Learned 
+
+
+### How to Improve This Code

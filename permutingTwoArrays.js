@@ -1,50 +1,52 @@
 function twoArrays(k, A, B) {
-  /*
-  subtract the values of the second array from k to create a difference array (usually negative values)
-  subtract the first array from the difference array to get the balance array
-  add together all balance array values, if <= 0, return YES
-  */
-
-  let diffArray = [];
-  let balanceArray =[];
-  let balanceSum = 0;
-  let finalOutput = '';
-
-  // console.log(B);
-
-  B.forEach(element => {
-    // console.log(element);
-    // console.log(k)
-
-    diffArray.push(element - k);
-    // console.log(diffArray);
-  });
-    console.log(diffArray)
-
+  A.sort((a, b) => a - b);
+  B.sort((a, b) => a - b);
 
   for (let i = 0; i < A.length; i++) {
-    // console.log(balanceArray);
-    // console.log(diffArray[i]);
-    // console.log("minus");
-    // console.log(B[i]);
-    balanceArray.push(diffArray[i] + A[i]);  
+    if (A[i] + B[A.length - 1 - i] < k) {
+      console.log("no")
+      return "NO";
+    }
   }
-  console.log(balanceArray) 
+  console.log("YES")
+  return "YES";
+};
+/*
+subtract the values of the second array from k to create a difference array (usually negative values)
+subtract the first array from the difference array to get the balance array
+add together all balance array values, if <= 0, return YES
+*/
+// let diffArray = [];
+// let balanceArray =[];
+// let balanceSum = 0;
+// let finalOutput = '';
 
-  for (let i=0; i <balanceArray.length; i++) {
-    balanceSum += balanceArray[i]
-  }
-  console.log(balanceSum)  
+// // console.log(B);
 
-  if (balanceSum < 0) {
-    // console.log("won't work?")
-    finalOutput = "NO"
-  } else {
-    // console.log("will work?")
-    finalOutput = "YES"
-  }
+// B.forEach(element => {
+//   diffArray.push(element - k);
+// });
+//   console.log(diffArray)
 
-  return finalOutput;
+
+// for (let i = 0; i < A.length; i++) {
+//   balanceArray.push(diffArray[i] + A[i]);  
+// }
+// console.log(balanceArray) 
+
+// for (let i=0; i <balanceArray.length; i++) {
+//   balanceSum += balanceArray[i]
+// }
+// console.log(balanceSum)  
+
+// if (balanceSum < 0) {
+//   finalOutput = "NO"
+// } else {
+//   finalOutput = "YES"
+// }
+
+// console.log(finalOutput);
+// return finalOutput;
   // console.log(diffArray);
 
   // let initialArray = A;
@@ -111,8 +113,10 @@ function twoArrays(k, A, B) {
   run the comparison function again, if not, run the shuffle function again
   If arrays don't make mix && i === 1stArray.length, shuffle the second array, then run the comparison again
   */
-};
 
 twoArrays(5, [1, 2, 2, 1], [3, 3, 3, 4]);
 twoArrays(10, [2, 1, 3], [7, 8, 9]);
 twoArrays(1, [0, 1], [0, 2]);
+
+twoArrays(5, [1, 2, 2, 1], [3, 3, 3, 5]);
+
