@@ -7,10 +7,11 @@ function twoArrays(k, A, B) {
 
   let diffArray = [];
   let balanceArray =[];
+  let balanceSum = 0;
 
-  console.log(B);
+  // console.log(B);
 
-  diffArray = B.forEach(element => {
+  B.forEach(element => {
     // console.log(element);
     // console.log(k)
 
@@ -18,14 +19,19 @@ function twoArrays(k, A, B) {
     // console.log(diffArray);
   });
 
-  for (let i = 0; i < B.length; i++) {
-    console.log(balanceArray);
-    console.log(diffArray[i]);
-    console.log("minus");
-    console.log(B[i]);
-    balanceArray.push(diffArray[i] - B[i]);  
-    console.log(balanceArray)  
+  for (let i = 0; i < A.length; i++) {
+    // console.log(balanceArray);
+    // console.log(diffArray[i]);
+    // console.log("minus");
+    // console.log(B[i]);
+    balanceArray.push(diffArray[i] - A[i]);  
   }
+  
+  for (let i=0; i <balanceArray.length; i++) {
+    // balanceSum = 
+    // TODO add together all the values in the balanceArray
+  }
+  console.log(balanceArray)  
 
   // console.log(diffArray);
 
