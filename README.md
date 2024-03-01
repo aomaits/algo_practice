@@ -281,25 +281,48 @@ The time complexity is O(n^2) where `n` is size of one side of the square matrix
 
 ### Problem Solving 
 
-I tried to solve this problem in multiple ways, but ultimately fell short. I did create my own mathematical shortcut that solved for all test cases except one, but when I stepped back from it, I quickly realized that this shouldn't have worked as much as it did. The flaw to this method was then very clear to me. I tried to ask ChatGPT if there was a fix to my approach, but accidentally received a completely new approach to the problem. This was a good thing, as I was pretty far off base- I hadn't thought of simply sorting the arrays first! The provided solution was far simpler. Instead, here's what I had been trying: 
+I tried to solve this problem in multiple ways, but ultimately fell short. I did create my own mathematical shortcut that solved for all test cases except one, but when I stepped back from it, I quickly realized that this shouldn't have worked as frequently as it did. Here's what I had been trying: 
 
-1. I set up a `for` loop inside of another `for` loop to see if each element of the second array could be added to at least one element in the first array and equal `k`. This doesn't work for a couple reasons, but the most obvious to me was that the values in the second array could all be using the same index position from the first array to equal `k`, which is not what the problem is asking for. 
+#### 1. Double For Loop
+I set up a `for` loop inside of another `for` loop to see if each element of the second array could be added to at least one element in the first array and equal `k`. This doesn't work for a couple reasons, but the most obvious to me was that the values in the second array could all be using the same index position from the first array to equal `k`, which is not what the problem is asking for. 
 
-2. 
+#### 2. Single For Loop
+I then tried using only a single `for` loop to compare both arrays at once. If they didn't add up to `k` at every index, I would simply shuffle the first array by pushing and shifting a number each time. Then I realized this still wouldn't cover all possible iterations of an array.
 
-Then thought I could shuffle the first array by pushing and shifting a number each time while comparing the two arrays, but the arrays can be permuted in any order so this wouldn't capture all combinations of an array
+#### 2.1 Single For Loop with Separate Shuffling
+I thought I could use that same single `for` loop check from my second attempt, but the array shuffle needed to be more complex. While one function checked the two arrays, it could call a second function to shuffle the arrays. With this function I could just shuffle the final two digits and try again, then the final three, eventually working my way back through all possible permutations of the array to check and make sure that they could be matched. This quickly got overwhelming when I realized how many permutations even relatively short arrays had (the constraints provided an array length greater than or equal to 1 but less than or equal to 1000!). 
 
-Long version with function to handle the shuffling and other function to check for the values, shuffle function growing complex with how to see the various iterations of the arrays
+#### Mathematical Equation
+4. I came up with a mathematical solution when I read what I mistook for an unintended hint in the explanation of a particular example of the problem: 
 
-read a possible unintended hint in the explanation about the first array would have to have at least 3 values in an array over 1 to work
+> To permute `A` and `B` into a valid `A'` and `B'`, there must be at least three numbers in `A` that are greater than `1`.
 
-mostly worked! but one edge case did not, dug in and figured out why (a high number in one location would convince my balance that it was more than 0, even though that didn't mean it would work.) [1,2,2,1 ] and [3,3,3,4] work, but if changing that last 4 to a 5, my program thinks this would work- it still won't. 
+Ah-ha! There it was! 
+I could simply subtract `k` from each element in `B` to create a (mostly negative valued) difference array, `diffArray`. I could then add `diffArray` at each element to `A` to create my `balanceArray`. Finally, I could loop through `balanceArray` and total up the values. If this final sum, `balanceSum`, was less than 0, I knew that there was no permutation of the two arrays that could be added together to equal `k` at every digit. However, with a value of 0 or higher, there was a permutation that would work. 
 
-I tried to ask ChatGPT for help getting the last step involved in my addition, ChatGPT instead gave me the answer to the problem. 
-#### 
+When all but 1 test case passed, I initially thought I'd gotten really close. When I dug in and saw where I'd gone wrong, I wasn't sure how it could be fixed. 
 
-####  
+Here's an example of where it goes wrong. Let's say: 
 
+`A = [1, 2, 2, 1]`
+
+`B = [3, 3, 3, 4]`
+
+`k = 5`
+
+You can look at the above and see that it won't work, and no shuffling will fix that. My mathematical shortcut, too, would support that response. It would return a `balanceSum` of `-1`.  
+
+However, you can trick my shortcut into thinking that these arrays will be able to match up by increasing one of the **other numbers** in the arrays. For example, let's change `A` so that it has a higher value at `A[2]`: 
+
+`A = [1, 2, 3, 1]`
+
+`B = [3, 3, 3, 4]`
+
+`k = 5`
+
+This would now return a `balanceSum` of `0`, so my program assumes that this can work. It can't, though, because `B` doesn't have two `4`s, and we need two `4`s to be added to the two `1`s in `A` to equal the target `k`, which is `5`. 
+
+Unsure where to go, I asked ChatGPT if there was a way to fix my math. Instead, I received a completely new approach and solution to the problem. I was frustrated initially, but this was ultimately a good thing, as I had been pretty far off base. I hadn't thought of simply sorting the arrays first! The provided solution was far simpler. 
 
 ### My Progress
 
