@@ -275,13 +275,17 @@ I made few adjustments to improve the code. I added a few descriptive variables 
 The time complexity is O(n^2) where `n` is size of one side of the square matrix. 
 
 ## Permuting Two Arrays
-> 
+> There are two `n`-element arrays of integers, `A` and `B`. Permute them into some `A'` and `B'` such that the relation `A'[i] + B'[i] >= k` holds for all `i` where `0 =< i =< n`.
 
-> 
+> There will be `q` queries consisting of `A`, `B`, and `k`. For each query, return YES if some permutation `A', B'` satisfying the relation exists. Otherwise, return NO.
 
 ### Problem Solving 
 
-Tried looping inside of a loop to compare the two arrays and see if each number in the first array could be added to a number in the second array to achieve `k` but realized that could fail
+I tried to solve this problem in multiple ways, but ultimately fell short. I did create my own mathematical shortcut that solved for all test cases except one, but when I stepped back from it, I quickly realized that this shouldn't have worked as much as it did. The flaw to this method was then very clear to me. I tried to ask ChatGPT if there was a fix to my approach, but accidentally received a completely new approach to the problem. This was a good thing, as I was pretty far off base- I hadn't thought of simply sorting the arrays first! The provided solution was far simpler. Instead, here's what I had been trying: 
+
+1. I set up a `for` loop inside of another `for` loop to see if each element of the second array could be added to at least one element in the first array and equal `k`. This doesn't work for a couple reasons, but the most obvious to me was that the values in the second array could all be using the same index position from the first array to equal `k`, which is not what the problem is asking for. 
+
+2. 
 
 Then thought I could shuffle the first array by pushing and shifting a number each time while comparing the two arrays, but the arrays can be permuted in any order so this wouldn't capture all combinations of an array
 
