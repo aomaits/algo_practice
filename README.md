@@ -322,12 +322,15 @@ However, you can trick my shortcut into thinking that these arrays will be able 
 
 This would now return a `balanceSum` of `0`, so my program assumes that this can work. It can't, though, because `B` doesn't have two `4`s, and we need two `4`s to be added to the two `1`s in `A` to equal the target `k`, which is `5`. 
 
-Unsure where to go, I asked ChatGPT if there was a way to fix my math. Instead, I received a completely new approach and solution to the problem. I was frustrated initially, but this was ultimately a good thing, as I had been pretty far off base. I hadn't thought of simply sorting the arrays first! The provided solution was far simpler. 
+Unsure where to go, I asked ChatGPT if there was a way to fix my math. Instead, I received a completely new approach and solution to the problem. I was frustrated initially, but this was ultimately a good thing, as I had been pretty far off base. I hadn't thought of simply sorting the arrays first! The provided solution was far simpler. It sorted both arrays by value then invertedly added them together. While one array was moving up from the 0th index, the other would be moving down toward it. If any value resulted in less than `k`, the permutation had been shown not to work. 
 
 ### My Progress
-
+It doesn't feel like progress to just be given the solution. I've seen arrays sorted in prior solutions before, so I knew that was an option, I just didn't think of it here. I was disappointed and frustrated that I'd overlooked this solution. This challenge was more a learning opportunity and less of a measure of progress.
 
 ### What I Learned 
+I learned to take things back to the very beginning when thinking through a problem. My first ideas weren't impossible, they were just really, really cumbersome. I knew there was a better solution out there, but I couldn't figure out what it was. 
 
+I don't think I'll forget about the `sort` method again. 
 
 ### How to Improve This Code
+I didn't write the final solution, but there's nothing flawed that jumps out to me here. 
