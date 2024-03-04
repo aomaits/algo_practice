@@ -16,6 +16,10 @@ const day = 12;
 const month = 4;
 
 function birthday(s, d, m) {
+  // loop through s, comparing segments with a length of m
+  // if they add up to d, add 1 to the count
+  // if not, continue
+
   let possibleBarDivisions = 0;
 
   for (let i = 0; i < s.length; i++) {
@@ -36,9 +40,6 @@ function birthday(s, d, m) {
   function getSum(total, num) {
     return total + num;
   }
-  // loop through s, comparing segments with a length of m
-  // if they add up to d, add 1 to the count
-  // if not, continue
 
   
   // console.log(possibleBarDivisions);
