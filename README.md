@@ -351,9 +351,15 @@ Upon reading the problem, I had an idea that I could loop through `s`, pulling o
 
 Although I had to tweak it as I put it into practice, I was able to use this approach to solve the problem.
 
-####
+#### Avoiding a Second Loop with the slice() Method
+After copying the problem over to my VSCode, I transferred over the examples from the problem and made sure these were being passed in correctly with some console logs. 
 
-#### 
+I then set up a `for` loop. I initially set this loop up to increase at a rate of `m`, but then realized I still needed `i` to increase by 1 with each loop, otherwise I might skip valid contiguous segments. I knew that I wanted to compare `m` number of index positions with each loop, but wasn't sure how to do that initially. I considered adding a second for loop to count up the number of positions from `i` until it reached the `i` + `m` position, but I wanted to avoid the second loop. I swiftly realized I would need to make some sort of subarray copy.
+
+I used the `slice()` method, but at first didn't implement it correct, as it worked on the first `for` loop and then fell apart. I had set the `slice` parameters to end at `m - 1`, but what I really needed was for that ending parameter to shift along with the index. I adjusted `subsection`, the variable where I was holding each subsection of the array, to end the slice at `i + m - 1`. This still wasn't quite right though, as I immediately saw in the console logs. Reading again about the `slice` method, I realized my mistake was in the the second value I was passing- the `slice()` method would select elements beginning at the start element and up to- **but not including**- the end argument. I adjusted `subsection` to end the slice at `i + m`.
+
+#### Avoiding a Second Loop with the reduce() Method
+Now I wondered how to add up the totals of this subarray, `subsection`, so that I could check whether or not the total was equal to `d`. I briefly considered a `for` loop, but figured that there was likely a better built-in method I could take advantage of. A quick search gave me the `reduce()` method. I was able to implement this almost verbatim from a shown example and it worked as expected. 
 
 #### 
 
