@@ -7,8 +7,44 @@
  *  2. INTEGER d
  *  3. INTEGER m
  */
+// const segments = [2, 2, 1, 3, 2];
+// const day = 4;
+// const month = 2;
+
+const segments = [2, 4, 1, 5, 5, 1, 2, 7, 2];
+const day = 12;
+const month = 4;
 
 function birthday(s, d, m) {
-  // Write your code here
+  let possibleBarDivisions = 0;
 
+  for (let i = 0; i < s.length; i++) {
+    let sliceTo = m + i;
+    // console.log(i);
+    // console.log(m);
+    // console.log(sliceTo);
+    const subsection = s.slice(i, sliceTo);
+    let subsectionTotal = subsection.reduce(getSum, 0)
+    if (subsection.length === m  && subsectionTotal === d) {
+      console.log(subsection)
+      console.log(subsectionTotal)
+      possibleBarDivisions++;
+      // console.log(possibleBarDivisions)
+    }
+  }
+
+  function getSum(total, num) {
+    return total + num;
+  }
+  // loop through s, comparing segments with a length of m
+  // if they add up to d, add 1 to the count
+  // if not, continue
+
+  
+  // console.log(possibleBarDivisions);
+
+  return possibleBarDivisions;
 }
+
+
+birthday(segments, day, month);
