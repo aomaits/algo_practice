@@ -347,7 +347,9 @@ I didn't write the final solution, but there's nothing flawed that jumps out to 
 > Determine how many ways she can divide the chocolate.
 
 ### Problem Solving 
+Upon reading the problem, I had an idea that I could loop through `s`, pulling out a chunk of it that had a length of `m` to compare to see if the values within that would add up to `d`. I then planned to add 1 to the count if they did add up and return the count at the end of the problem. 
 
+Although I had to tweak it as I put it into practice, I was able to use this approach to solve the problem.
 
 ####
 
