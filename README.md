@@ -393,8 +393,12 @@ My first step was to try to understand XOR a little. I could not solve this prob
 #### XOR
 I briefly read through the linked Wikipedia page on `Exclusive or` before understanding what was needed here. XOR would be true (or evaluate to `1`, in our case) whereever the inputs differ. It would evaluate to false (`0` for us) when the inputs were the same.  
 
-#### A Solution!
-I was a bit confused by the basic JavaScript input. I turned to ChatGPT for an explanation and to see if there was a way for me to split apart the input so that I could compare the two lines of the string. Splitting on the `/n` character worked
+#### A Solution! ...rejected
+I was a bit confused by the basic JavaScript input. I turned to ChatGPT for an explanation and to see if there was a way for me to split apart the input so that I could compare the two lines of the string. Splitting on the `/n` character worked. 
+
+From there, I set up a simple `for` loop to compare the two strings character-by-character. I then appended the results to a variable, `xorOfStrings`. Console logging this variable, I saw that it was producing the correct result. 
+
+However, my submission was not accepted. I assumed this was for the lines of code I'd had to add. 
 
 #### 
 
