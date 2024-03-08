@@ -393,14 +393,24 @@ My first step was to try to understand XOR a little. I could not solve this prob
 #### XOR
 I briefly read through the linked Wikipedia page on `Exclusive or` before understanding what was needed here. XOR would be true (or evaluate to `1`, in our case) whereever the inputs differ. It would evaluate to false (`0` for us) when the inputs were the same.  
 
-#### A Solution! ...rejected
+#### A JavaScript Solution! ...rejected
 I was a bit confused by the basic JavaScript input. I turned to ChatGPT for an explanation and to see if there was a way for me to split apart the input so that I could compare the two lines of the string. Splitting on the `/n` character worked. 
 
 From there, I set up a simple `for` loop to compare the two strings character-by-character. I then appended the results to a variable, `xorOfStrings`. Console logging this variable, I saw that it was producing the correct result. 
 
-However, my submission was not accepted. I assumed this was for the lines of code I'd had to add. 
+However, my submission was not accepted. I assumed this was for the lines of code I'd had to add. Frustrated, I turned to ChatGPT for an answer that wouldn't add any code. This didn't work either, though- ChatGPT couldn't solve the problem without adding lines of JavaScript. Confused, I then turned to the HackerRank Discussions page for the problem and found this from 2 days ago: 
 
-#### 
+>It is not showing the function for a lot of languages. I tried C++ and kept getting wrong answer even though it was exactly as expected output. Had to change to Java 7 to get right answer. This task needs to be fixed...
+
+And from a week ago: 
+
+>There is no function shown in JS. Changed to Python & TypeScript and see the function now.
+
+
+I decided to try a different tact and switched to Python, too. 
+
+#### Python! 
+ 
 
 #### 
 
