@@ -336,7 +336,6 @@ I don't think I'll forget about the `sort` method again.
 I didn't write the final solution, but there's nothing flawed that jumps out to me here. 
 
 
-
 ## Subarray Division 2
 > Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.
 
@@ -377,3 +376,34 @@ Using the `reduce()` method was new for me. I'd seen it prior, I just hadn't had
 
 ### How to Improve This Code
 With a time complexity of `O(n)`, I think this solution is pretty efficient. I did see a much more concise solution on the messageboard. It used the same methods, `slice()` and `reduce()`, but it used arrow functions and ternary operators and avoided variables to reduce the length of the code.  
+
+
+## XOR Strings 3
+> In this challenge, the task is to debug the existing code to successfully execute all provided test files.
+
+> Given two strings consisting of digits 0 and 1 only, find the XOR of the two strings.
+
+> Debug the given function strings_xor to find the XOR of the two given strings appropriately.
+
+> Note: You can modify at most three lines in the given code and you cannot add or remove lines to the code.
+
+### Problem Solving 
+My first step was to try to understand XOR a little. I could not solve this problem without that base. 
+
+#### XOR
+I briefly read through the linked Wikipedia page on `Exclusive or` before understanding what was needed here. XOR would be true (or evaluate to `1`, in our case) whereever the inputs differ. It would evaluate to false (`0` for us) when the inputs were the same.  
+
+#### A Solution!
+I was a bit confused by the basic JavaScript input. I turned to ChatGPT for an explanation and to see if there was a way for me to split apart the input so that I could compare the two lines of the string. Splitting on the `/n` character worked
+
+#### 
+
+#### 
+
+### My Progress
+
+
+### What I Learned 
+
+
+### How to Improve This Code
