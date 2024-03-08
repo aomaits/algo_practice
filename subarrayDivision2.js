@@ -49,3 +49,8 @@ function birthday(s, d, m) {
 
 
 birthday(segments, day, month);
+
+for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+  
+}
