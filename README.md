@@ -410,7 +410,11 @@ And from a week ago:
 I decided to try a different tact and switched to Python, too. 
 
 #### Python! 
- 
+Switching to Python was immediately helpful. I saw the problem laid out and saw what I might be able to improve right away. I haven't really coded in Python, but about a year ago I did a few beginner exercises with it. 
+
+I first updated the line `s[i] = t[i]` to `s[i] == t[i]`. I was seeing an error on the comparison and read this similar to the `===` in JavaScript. Then I saw that the semicolons in the lines `res = '0';` in the if statement and `res = '1';` in the else statement were causing a syntax error, so I removed those. 
+
+I ran the code again but still returned only `0`, so I figured that the logic was set up to conditional reset the value of `res` on each comparison instead of adding to it. 
 
 #### 
 
