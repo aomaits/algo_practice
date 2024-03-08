@@ -414,9 +414,7 @@ Switching to Python was immediately helpful. I saw the problem laid out and saw 
 
 I first updated the line `s[i] = t[i]` to `s[i] == t[i]`. I was seeing an error on the comparison and read this similar to the `===` in JavaScript. Then I saw that the semicolons in the lines `res = '0';` in the if statement and `res = '1';` in the else statement were causing a syntax error, so I removed those. 
 
-I ran the code again but still returned only `0`, so I figured that the logic was set up to conditional reset the value of `res` on each comparison instead of adding to it. 
-
-#### 
+I ran the code again but still returned only `0`, so I figured that the logic was set up to conditional reset the value of `res` on each comparison instead of adding to it. I tried to look for a simple way of successively adding to the variable, wondering if I could use a `+=` as in JavaScript. I didn't find a clear example right away, so I tried it, thinking it seemed logical based on what I did find. And it worked! 
 
 ### My Progress
 
